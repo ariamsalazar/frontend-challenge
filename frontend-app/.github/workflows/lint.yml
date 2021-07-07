@@ -1,27 +1,24 @@
 name: Lint
 
 on:
-  # Trigger the workflow on push or pull request,
-  # but only for the main branch
+  pull_request:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - master
 
 jobs:
-  run-linters:
-    name: Run linters
+  eslint:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v2
-
-      # Install your linters here
-
-      - name: Run linters
-        uses: wearerequired/lint-action@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          eslint: true
+          node-version: '14'
+      - run: npm ci # or yarn install
+      - uses: sibiraj-s/action-eslint@v1
+        with:
+          eslintArgs: '--ignore-path=.gitignore --quiet'
+          extensions: 'js,jsx,ts,tsx'
+          annotations: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
