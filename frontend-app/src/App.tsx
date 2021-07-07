@@ -4,7 +4,7 @@ import './App.scss';
 function App(): JSX.Element {
 	return 
 	 <div className="App">
-	Homepage</div>;
+	Homepage Testing</div>;
 }
 
 export default App;
