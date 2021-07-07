@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.scss';
+import './assets/styles/custom.scss';
 
 function App(): JSX.Element {
 	return <div className="App"> Homepage Testing Develop </div>;
