@@ -24,23 +24,27 @@ export default function Homepage(): JSX.Element {
 
 		if (res) setResults(res.results);
 		else setResults([]);
+
+		if (enteredText === '') setResults([]);
 	}
 
 	return (
 		<div>
 			<Header />
 			<Container>
-				<Row>
-					<Col xs="12" className="mt-4 mb-4">
-						<Form>
+				<Row className="justify-content-md-center">
+					<Col xs="10" className="mt-4 mb-4">
+						<Form className="text-left">
 							<FormGroup>
-								<Label for="exampleEmail">Search List</Label>
-								<Input type="text" name="planet" id="planet" placeholder="Enter keyphrase" value={text} onChange={inputHandler} />
+								<Label for="planet" className="title-search mb-2">
+									Search List
+								</Label>
+								<Input type="text" name="planet" id="planet" placeholder="Search..." value={text} onChange={inputHandler} />
 							</FormGroup>
 						</Form>
 					</Col>
-					<Col xs="12" className="mt-4 mb-4">
-						{results.length > 0
+					<Col xs="10" className="mt-4 mb-4">
+						{results && results.length > 0
 							? (
 								<div>
 									{results.map((item: Planet) => (
@@ -50,11 +54,11 @@ export default function Homepage(): JSX.Element {
 									))}
 								</div>
 							)
-							: <span> No results for this search </span> }
+							: <span className="text-error"> No results for this search </span> }
 					</Col>
+					<PlanetList />
 				</Row>
 			</Container>
-			<PlanetList />
 			<Footer />
 		</div>
 	);

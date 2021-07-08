@@ -17,9 +17,9 @@ export type Props = {
 };
 
 // State Initial
-const localS = localStorage.getItem('planetsList');
+const localS = JSON.parse(localStorage.getItem('planetsList') || '');
 const initialState = {
-	planetsList: [],
+	planetsList: localStorage.getItem('planetsList') ? localS : [],
 	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	addPlanetToList: (): void => {},
 	// eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -34,7 +34,7 @@ export const GlobalProvider = (props: Props): JSX.Element => {
 
 	// LocalStorage PlanetList
 	useEffect(() => {
-		localStorage.setItem('planetsList', JSON.stringify(state.planetsList));
+		window.localStorage.setItem('planetsList', JSON.stringify(state.planetsList));
 	}, [state]);
 
 	// Actions

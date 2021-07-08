@@ -12,30 +12,114 @@ body {
   padding: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: $white;
+  background-color: #f2f1f1;
 }
 
 .App {
   text-align: center;
-  height: 100vh;
+  height: auto;
 }
 
-.add-btn{
+.text-left {
+  text-align: left;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.header{
   width: 100%;
-  display: inline-block;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  height: auto;
+  background-color: $white;
   padding: 20px;
-  margin: 10px 0;
-  border: 1px solid #95a5a6;
+  font-size: $h4-font-size;
+  color: $blue-middle;
+  .middle{
+    font-size: $font-size-base;
+    color: $black;
+    display: block;
+  }
+}
+
+.footer{
+  height: auto;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #3f51b5;
+  color: $white;
+  padding: 10px 20px;
+  margin-top: 30px;
+}
+
+.title-search{
+  font-size: $h4-font-size;
+  color: #333;
+  font-weight: 500;
+  padding-bottom: 5px;
 }
 
 .list-final{
-  background-color: pink;
+  margin-bottom: 50px;
 }
-.list-final-item{
+
+.add-btn, .list-final-item{
+  width: 100%;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: $white;
+  text-align: left;
+  border-bottom: 1px solid $gray-100 !important;
+  border: 0;
+  .title-first{
+    font-size: $h4-font-size;
+    color: $blue-dark;
+    font-weight: 400;
+    display: block;
+  }
+  .title-second{
+    font-size: $font-size-base;
+    color: #333;
+    margin-top: 4px;
+    display: block;
+  }
+}
+
+.text-error{
+  color: $black;
+  font-size: $font-size-base;
+}
+
+.list-search-item{
   width: 100%;
   display: inline-block;
   padding: 20px;
   margin: 10px 0;
-  border: 1px solid #95a5a6;
-  background-color: #95a5a6;
+  border-radius: 5px;
+  background-color: $white;
+}
+
+.delete-item{
+  color: $white;
+}
+
+.form-control{
+  padding: .8rem 0.75rem !important;
+  border-radius: 35px !important;
+  border: 1px solid $blue-light !important;
+  padding-left: 20px !important;
+  background-image: url(../images/search.png);
+  background-position: 95%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
+.list-title{
+  font-size: $h1-font-size;
+  color: $blue-middle;
+  display: inline-block;
 }
