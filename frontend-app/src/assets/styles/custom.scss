@@ -12,7 +12,7 @@ body {
   padding: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: #f2f1f1;
+  background-color: #f2f1f1 !important;
 }
 
 .App {
@@ -82,7 +82,7 @@ body {
     display: block;
   }
   .title-second{
-    font-size: $font-size-base;
+    font-size: .85rem;
     color: #333;
     margin-top: 4px;
     display: block;
@@ -103,8 +103,18 @@ body {
   background-color: $white;
 }
 
-.delete-item{
+.btn-item{
   color: $white;
+  width: 40px !important; 
+  height: 40px !important;
+  border-radius: 100% !important;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: center;
+  background-image: url(../images/add.png);
+  &.delete{
+    background-image: url(../images/delete.png);
+  }
 }
 
 .form-control{

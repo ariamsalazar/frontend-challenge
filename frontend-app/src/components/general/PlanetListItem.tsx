@@ -13,29 +13,30 @@ export default function PlanetListItem({ planet }: IPropsItem): JSX.Element {
 	return (
 		<div className="list-final-item">
 			<Row>
-				<Col xs="8">
+				<Col xs="2">
 					<span className="title-first">
 						{planet.name}
 					</span>
+				</Col>
+				<Col xs="2">
 					<span className="title-second">
-						- Terrain:
-						{planet.terrain}
-					</span>
-					<span className="title-second">
-						- Gravity:
 						{planet.gravity}
 					</span>
+				</Col>
+				<Col xs="3">
 					<span className="title-second">
-						- URL:
+						{planet.terrain}
+					</span>
+				</Col>
+				<Col xs="3">
+					<span className="title-second">
 						{planet.url}
 					</span>
 				</Col>
-				<Col xs="4" className="text-right">
+				<Col xs="2" className="text-right">
 					{removePlanetFromList
 						? (
-							<Button type="button" color="primary" className="delete-item mt-4" onClick={(): void => removePlanetFromList(planet)}>
-								Delete
-							</Button>
+							<Button type="button" color="danger" className="btn-item delete mt-1" onClick={(): void => removePlanetFromList(planet)} />
 						)
 						: null }
 				</Col>
