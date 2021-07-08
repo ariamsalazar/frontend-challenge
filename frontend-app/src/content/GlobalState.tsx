@@ -1,4 +1,7 @@
-import React, { createContext, useReducer, ReactNode } from 'react';
+import React, {
+	createContext, useReducer,
+	useEffect, ReactNode,
+} from 'react';
 
 import { Planet } from '../interfaces/interfaces';
 import AppReducer from './AppReducer';
@@ -6,16 +9,21 @@ import AppReducer from './AppReducer';
 interface Planets {
 	planetsList: Planet[];
 	addPlanetToList?: (planet: Planet) => void;
+	removePlanetFromList?: (planet: Planet) => void;
 }
 
 export type Props = {
 	children: ReactNode;
 };
-// State Initial
 
+// State Initial
+const localS = localStorage.getItem('planetsList');
 const initialState = {
 	planetsList: [],
-	addPlanetsToList: (): void => { console.log(1); },
+	// eslint-disable-next-line @typescript-eslint/no-empty-function
+	addPlanetToList: (): void => {},
+	// eslint-disable-next-line @typescript-eslint/no-empty-function
+	removePlanetFromList: (): void => {},
 };
 
 export const GlobalContenxt = createContext<Planets>(initialState);
@@ -24,13 +32,22 @@ export const GlobalProvider = (props: Props): JSX.Element => {
 	const [state, dispatch] = useReducer(AppReducer, initialState);
 	const { children } = props;
 
+	// LocalStorage PlanetList
+	useEffect(() => {
+		localStorage.setItem('planetsList', JSON.stringify(state.planetsList));
+	}, [state]);
+
 	// Actions
 	const addPlanetToList = (planet: Planet): void => {
 		dispatch({ type: 'ADD_PLANET_TO_LIST', payload: planet });
 	};
+	const removePlanetFromList = (planet: Planet): void => {
+		dispatch({ type: 'REMOVE_PLANET_TO_LIST', payload: planet });
+	};
 
+	// Global Provider
 	return (
-		<GlobalContenxt.Provider value={{ planetsList: state.planetsList, addPlanetToList }}>
+		<GlobalContenxt.Provider value={{ planetsList: state.planetsList, addPlanetToList, removePlanetFromList }}>
 			{children}
 		</GlobalContenxt.Provider>
 	);

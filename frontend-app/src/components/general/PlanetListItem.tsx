@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Button } from 'reactstrap';
+import { Planet } from '../../interfaces/interfaces';
+import { GlobalContenxt } from '../../content/GlobalState';
 
-export default function PlanetListItem(): JSX.Element {
+interface IPropsItem {
+	planet: Planet;
+}
+
+export default function PlanetListItem({ planet }: IPropsItem): JSX.Element {
+	const { removePlanetFromList } = useContext(GlobalContenxt);
+
 	return (
-		<div>
-			List Item
+		<div className="list-final-item">
+			{planet.name}
+			{removePlanetFromList
+				? (
+					<Button type="button" className="delete-item" onClick={(): void => removePlanetFromList(planet)}>
+						Delete
+					</Button>
+				)
+				: null }
 		</div>
 	);
 }
