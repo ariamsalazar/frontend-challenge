@@ -48,10 +48,9 @@
 				"allowIndentationTabs": true
 			}
 		],
-        "linebreak-style": [
-			"error",
-			"unix"
-		],
+        "linebreak-style": 0,
+        "global-require": 0,
+        "eslint linebreak-style": [0, "error", "windows"],
 		"lines-around-comment": "error",
         "indent": [2, "tab"],
         "react/jsx-indent": [2, "tab"]
