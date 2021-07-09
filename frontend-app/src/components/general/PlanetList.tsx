@@ -13,11 +13,13 @@ export default function PlanetList(): JSX.Element {
 				<span className="list-title text-left">
 					Planets List
 				</span>
-				{planetsList.map((item: Planet) => (
-					<div key={`key-intern-list-${item.name}`} className="element">
-						<PlanetListItem planet={item} />
-					</div>
-				))}
+				<div className="list-complete">
+					{planetsList.map((item: Planet) => (
+						<div key={`key-intern-list-${item.name}`} className="element">
+							<PlanetListItem planet={item} />
+						</div>
+					))}
+				</div>
 			</div>
 		</Col>
 	);

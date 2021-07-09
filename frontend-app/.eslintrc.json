@@ -36,7 +36,7 @@
         "no-shadow": "off",
         "@typescript-eslint/no-shadow": ["error"],
         "@typescript-eslint/explicit-function-return-type": "off",
-        "max-len": ["warn", { "code": 180 }],
+        "max-len": ["warn", { "code": 185 }],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "import/prefer-default-export": "off",

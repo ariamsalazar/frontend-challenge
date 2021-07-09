@@ -37,7 +37,7 @@ export default function SearchListItem({ planet }: IProps): JSX.Element {
 				<Col xs="2" className="text-right">
 					{(addPlanetToList != null)
 						? (
-							<Button type="button" color="primary" className="btn-item mt-1" onClick={(): void => addPlanetToList(planet)} disabled={disableButton} />
+							<Button type="button" className="btn-item mt-1" id="btn-delete" color="primary" onClick={(): void => addPlanetToList(planet)} disabled={disableButton} />
 						)
 						: null}
 				</Col>

@@ -26,7 +26,8 @@
     "eject": "react-scripts eject",
     "pretest": "./node_modules/standard/bin/cmd.js",
     "lint": "eslint ./ --cache --ignore-pattern .gitignore",
-    "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
+    "cypress:open": "cypress open"
   },
   "browserslist": {
     "production": [
@@ -44,9 +45,11 @@
     "@types/react-dom": "^17.0.8",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
+    "cypress": "^7.7.0",
     "eslint": "^7.30.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
