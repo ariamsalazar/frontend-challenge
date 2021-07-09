@@ -24,11 +24,11 @@ body {
   text-align: left;
 }
 
-.text-right{
+.text-right {
   text-align: right;
 }
 
-.header{
+.header {
   width: 100%;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   height: auto;
@@ -36,14 +36,15 @@ body {
   padding: 20px;
   font-size: $h4-font-size;
   color: $blue-middle;
-  .middle{
+
+  .middle {
     font-size: $font-size-base;
     color: $black;
     display: block;
   }
 }
 
-.footer{
+.footer {
   height: auto;
   width: 100%;
   position: absolute;
@@ -54,18 +55,18 @@ body {
   margin-top: 30px;
 }
 
-.title-search{
+.title-search {
   font-size: $h4-font-size;
   color: #333;
   font-weight: 500;
   padding-bottom: 5px;
 }
 
-.list-final{
+.list-final {
   margin-bottom: 50px;
 }
 
-.add-btn, .list-final-item{
+.add-btn, .list-final-item {
   width: 100%;
   display: inline-block;
   padding: 10px 20px;
@@ -75,13 +76,15 @@ body {
   text-align: left;
   border-bottom: 1px solid $gray-100 !important;
   border: 0;
-  .title-first{
+
+  .title-first {
     font-size: $h4-font-size;
     color: $blue-dark;
     font-weight: 400;
     display: block;
   }
-  .title-second{
+
+  .title-second {
     font-size: .85rem;
     color: #333;
     margin-top: 4px;
@@ -89,12 +92,12 @@ body {
   }
 }
 
-.text-error{
+.text-error {
   color: $black;
   font-size: $font-size-base;
 }
 
-.list-search-item{
+.list-search-item {
   width: 100%;
   display: inline-block;
   padding: 20px;
@@ -103,7 +106,7 @@ body {
   background-color: $white;
 }
 
-.btn-item{
+.btn-item {
   color: $white;
   width: 40px !important; 
   height: 40px !important;
@@ -112,12 +115,13 @@ body {
   background-size: 15px;
   background-position: center;
   background-image: url(../images/add.png);
-  &.delete{
+
+  &.delete {
     background-image: url(../images/delete.png);
   }
 }
 
-.form-control{
+.form-control {
   padding: .8rem 0.75rem !important;
   border-radius: 35px !important;
   border: 1px solid $blue-light !important;
@@ -128,7 +132,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.list-title{
+.list-title {
   font-size: $h1-font-size;
   color: $blue-middle;
   display: inline-block;
