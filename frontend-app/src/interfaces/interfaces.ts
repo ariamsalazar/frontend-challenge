@@ -28,5 +28,5 @@ interface Planet {
 }
 
 export type{
-  IPlanetResults, ListItem, Planet,
-}
+	IPlanetResults, ListItem, Planet,
+};
