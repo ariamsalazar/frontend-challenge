@@ -54,7 +54,7 @@ export default function Homepage(): JSX.Element {
 									))}
 								</div>
 							)
-							: <span className="text-error"> No results for this search </span> }
+							: <span className="text-error"> No results for this search </span>}
 					</Col>
 					<PlanetList />
 				</Row>

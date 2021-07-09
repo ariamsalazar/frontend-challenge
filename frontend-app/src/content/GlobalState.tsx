@@ -1,20 +1,19 @@
 import React, {
-	createContext, useReducer,
-	useEffect, ReactNode,
+	createContext, useReducer, useEffect, ReactNode,
 } from 'react';
 
 import { Planet } from '../interfaces/interfaces';
 import AppReducer from './AppReducer';
 
 interface Planets {
-	planetsList: Planet[];
-	addPlanetToList?: (planet: Planet) => void;
-	removePlanetFromList?: (planet: Planet) => void;
+	planetsList: Planet[]
+	addPlanetToList?: (planet: Planet) => void
+	removePlanetFromList?: (planet: Planet) => void
 }
 
-export type Props = {
-	children: ReactNode;
-};
+export interface Props {
+	children: ReactNode
+}
 
 // State Initial
 const localS = JSON.parse(localStorage.getItem('planetsList') || '');

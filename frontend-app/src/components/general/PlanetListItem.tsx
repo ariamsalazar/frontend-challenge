@@ -4,7 +4,7 @@ import { Planet } from '../../interfaces/interfaces';
 import { GlobalContenxt } from '../../content/GlobalState';
 
 interface IPropsItem {
-	planet: Planet;
+  planet: Planet
 }
 
 export default function PlanetListItem({ planet }: IPropsItem): JSX.Element {
@@ -34,11 +34,11 @@ export default function PlanetListItem({ planet }: IPropsItem): JSX.Element {
 					</span>
 				</Col>
 				<Col xs="2" className="text-right">
-					{removePlanetFromList
+					{(removePlanetFromList != null)
 						? (
 							<Button type="button" color="danger" className="btn-item delete mt-1" onClick={(): void => removePlanetFromList(planet)} />
 						)
-						: null }
+						: null}
 				</Col>
 			</Row>
 		</div>

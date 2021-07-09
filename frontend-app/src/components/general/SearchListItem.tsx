@@ -4,13 +4,13 @@ import { Planet } from '../../interfaces/interfaces';
 import { GlobalContenxt } from '../../content/GlobalState';
 
 interface IProps {
-	planet: Planet;
+	planet: Planet
 }
 
 export default function SearchListItem({ planet }: IProps): JSX.Element {
 	const { addPlanetToList, planetsList } = useContext(GlobalContenxt);
 	const storedPlanets = planetsList.find((o) => o.name === planet.name);
-	const disableButton = !!storedPlanets;
+	const disableButton = !(storedPlanets == null);
 	return (
 		<div className="add-btn">
 			<Row>
@@ -35,11 +35,11 @@ export default function SearchListItem({ planet }: IProps): JSX.Element {
 					</span>
 				</Col>
 				<Col xs="2" className="text-right">
-					{addPlanetToList
+					{(addPlanetToList != null)
 						? (
 							<Button type="button" color="primary" className="btn-item mt-1" onClick={(): void => addPlanetToList(planet)} disabled={disableButton} />
 						)
-						: null }
+						: null}
 				</Col>
 			</Row>
 		</div>
