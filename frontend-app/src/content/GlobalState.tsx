@@ -16,7 +16,9 @@ export interface Props {
 }
 
 // State Initial
-const localS = JSON.parse(localStorage.getItem('planetsList') || '');
+let localS = [];
+if (localStorage.getItem('planetsList')) { localS = JSON.parse(localStorage.getItem('planetsList') || ''); }
+
 const initialState = {
 	planetsList: localStorage.getItem('planetsList') ? localS : [],
 	// eslint-disable-next-line @typescript-eslint/no-empty-function

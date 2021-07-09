@@ -34,7 +34,7 @@ export default function Homepage(): JSX.Element {
 			<Container>
 				<Row className="justify-content-md-center">
 					<Col xs="10" className="mt-4 mb-4">
-						<Form className="text-left">
+						<Form className="text-left" id="form-search">
 							<FormGroup>
 								<Label for="planet" className="title-search mb-2">
 									Search List
