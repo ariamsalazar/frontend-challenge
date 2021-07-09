@@ -2,7 +2,7 @@ import React, {
 	createContext, useReducer, useEffect, ReactNode,
 } from 'react';
 
-import { Planet } from '../interfaces/interfaces';
+import { Planet } from "../interfaces/interfaces";
 import AppReducer from './AppReducer';
 
 interface Planets {
@@ -38,7 +38,7 @@ export const GlobalProvider = (props: Props): JSX.Element => {
 
 	// Actions
 	const addPlanetToList = (planet: Planet): void => {
-		dispatch({ type: 'ADD_PLANET_TO_LIST', payload: planet });
+	dispatch({ type: 'ADD_PLANET_TO_LIST', payload: planet })
 	};
 	const removePlanetFromList = (planet: Planet): void => {
 		dispatch({ type: 'REMOVE_PLANET_TO_LIST', payload: planet });
