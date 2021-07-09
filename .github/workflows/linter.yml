@@ -17,8 +17,5 @@ jobs:
         with:
           node-version: 12
 
-      # Install your dependencies
-      - run: npm ci
-
       # Run ESLint
       - uses: eslint/github-action@v0
