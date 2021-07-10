@@ -1,8 +1,8 @@
 # frontend-challenge
 Front End Challenge (Hooks + Typescript + Context API)
 
-Instructions:
-
+# React App:
+git clone https://github.com/ariamsalazar/frontend-challenge/
 npm install 
 npm start 
 
